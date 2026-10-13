@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="HomeStyle Furniture — stylish, quality furniture for your home and office in Addis Ababa, Ethiopia.">
+  <title>HomeStyle Furniture | Beautiful Furniture for a Better Home</title>
+  <style>
+    :root {
+      --ink: #17252a;
+      --brown: #382719;
+      --gold: #f5b833;
+      --cream: #f8f5ef;
+      --muted: #68737a;
+      --white: #fff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: Arial, Helvetica, sans-serif; color: var(--ink); background: var(--cream); line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    .hero {
+      min-height: 620px; color: white; position: relative; overflow: hidden;
+      background: linear-gradient(90deg, rgba(23,17,12,.92) 0%, rgba(23,17,12,.76) 37%, rgba(23,17,12,.12) 100%),
+      url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=2000&q=85') center/cover;
+    }
+    header { max-width: 1200px; margin: auto; padding: 22px 24px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { font-size: 1.65rem; font-weight: 800; line-height: 1.1; letter-spacing: -.7px; }
+    .brand span { color: var(--gold); }
+    .brand small { display: block; font-size: .62rem; letter-spacing: 5px; font-weight: 500; margin-left: 3px; }
+    nav { display: flex; align-items: center; gap: 28px; }
+    nav a { font-size: .95rem; font-weight: 600; opacity: .95; }
+    nav a:hover { color: var(--gold); }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 21px; border-radius: 30px; background: var(--gold); color: #20180d; font-weight: 800; border: 2px solid var(--gold); transition: .2s; }
+    .btn:hover { transform: translateY(-2px); filter: brightness(1.05); }
+    .btn-outline { background: transparent; color: white; border-color: rgba(255,255,255,.8); }
+    .hero-copy { max-width: 1200px; margin: auto; padding: 65px 24px 105px; }
+    .eyebrow { color: var(--gold); font-weight: 800; letter-spacing: 2px; font-size: .84rem; text-transform: uppercase; }
+    h1 { max-width: 590px; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(2.7rem, 5vw, 4.4rem); line-height: 1.04; margin: 14px 0 22px; letter-spacing: -1.5px; }
+    h1 span { color: var(--gold); }
+    .hero-copy p { max-width: 490px; font-size: 1.08rem; color: #f1eee9; margin-bottom: 28px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 13px; }
+    .benefits { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; background: #fff; padding: 28px max(24px, calc((100% - 1150px)/2)); }
+    .benefit { padding: 8px 22px; border-right: 1px solid #e7e1d8; }
+    .benefit:last-child { border-right: 0; }
+    .benefit strong { display: block; margin-bottom: 3px; }
+    .benefit p { font-size: .87rem; color: var(--muted); }
+    .benefit .symbol { color: #e9a92d; font-size: 1.8rem; float: left; margin-right: 13px; }
+    section.content { max-width: 1200px; margin: auto; padding: 66px 24px; }
+    .section-heading { text-align: center; margin-bottom: 30px; }
+    .section-heading h2 { font-family: Georgia, 'Times New Roman', serif; font-size: clamp(2rem, 3vw, 2.7rem); line-height: 1.2; margin-bottom: 8px; }
+    .section-heading p { color: var(--muted); }
+    .categories { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .category { position: relative; min-height: 240px; border-radius: 10px; overflow: hidden; color: white; display: flex; align-items: flex-end; background: #57422d; box-shadow: 0 8px 24px rgba(42,30,18,.10); }
+    .category::before { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(0,0,0,.8), rgba(0,0,0,.02) 85%); z-index: 1; }
+    .category img { position: absolute; width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
+    .category:hover img { transform: scale(1.06); }
+    .category-info { position: relative; z-index: 2; padding: 20px; width: 100%; }
+    .category-info h3 { font-size: 1.25rem; margin-bottom: 2px; }
+    .category-info p { font-size: .88rem; color: #f3eee8; }
+    .about { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 45px; }
+    .about img { width: 100%; border-radius: 14px; max-height: 390px; object-fit: cover; }
+    .about h2 { font-family: Georgia, 'Times New Roman', serif; font-size: 2.5rem; line-height: 1.2; margin: 10px 0 18px; }
+    .about p { color: var(--muted); margin-bottom: 22px; }
+    .contact { background: #14201d; color: white; }
+    .contact-inner { max-width: 1200px; margin: auto; padding: 45px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 24px; }
+    .contact h2 { font-family: Georgia, 'Times New Roman', serif; font-size: 2rem; }
+    .contact p { color: #d9dfdc; }
+    .contact-details { display: flex; flex-wrap: wrap; gap: 24px; }
+    .contact-details div { min-width: 145px; }
+    .contact-details strong { display: block; color: var(--gold); }
+    footer { background: #0c1412; color: #b8c0bc; text-align: center; padding: 18px 20px; font-size: .85rem; }
+    .whatsapp-float { position: fixed; right: 20px; bottom: 20px; z-index: 10; border-radius: 50px; padding: 13px 18px; background: #20bf63; color: white; box-shadow: 0 5px 20px #0003; font-weight: 800; }
+    @media (max-width: 900px) {
+      nav { gap: 14px; }
+      .benefits { grid-template-columns: repeat(2, 1fr); }
+      .benefit:nth-child(2) { border-right: 0; }
+      .categories { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 620px) {
+      header { align-items: flex-start; flex-direction: column; padding: 18px 20px; }
+      nav { width: 100%; flex-wrap: wrap; gap: 13px 19px; }
+      nav a { font-size: .88rem; }
+      nav .btn { padding: 9px 14px; }
+      .hero { min-height: auto; background-position: 58% center; }
+      .hero-copy { padding: 55px 20px 75px; }
+      .hero-copy p { font-size: 1rem; }
+      .benefits { padding: 22px 14px; }
+      .benefit { padding: 12px 10px; border-right: 0; }
+      .benefit .symbol { float: none; display: block; margin-bottom: 3px; }
+      section.content { padding: 48px 18px; }
+      .categories { grid-template-columns: 1fr; }
+      .category { min-height: 220px; }
+      .about { grid-template-columns: 1fr; gap: 25px; }
+      .about h2 { font-size: 2rem; }
+      .contact-inner { align-items: flex-start; flex-direction: column; }
+      .whatsapp-float { right: 12px; bottom: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="hero" id="home">
+    <header>
+      <a class="brand" href="#home">⌂ Home<span>Style</span><small>F U R N I T U R E</small></a>
+      <nav aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#products">Products</a>
+        <a href="#contact">Contact</a>
+        <a class="btn" href="#products">🛒 Browse Products</a>
+      </nav>
+    </header>
+    <div class="hero-copy">
+      <div class="eyebrow">Welcome to HomeStyle Furniture</div>
+      <h1>Beautiful Furniture<br>for a <span>Better Home</span></h1>
+      <p>Discover stylish, carefully crafted furniture for your home and office. Make every space more comfortable, useful, and beautiful with HomeStyle Furniture.</p>
+      <div class="actions">
+        <a class="btn" href="#products">Browse Products&nbsp; →</a>
+        <a class="btn btn-outline" href="#about">Learn More</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="benefits" aria-label="Our service benefits">
+    <div class="benefit"><span class="symbol">◇</span><strong>Quality Craftsmanship</strong><p>Furniture made with care and attention.</p></div>
+    <div class="benefit"><span class="symbol">↗</span><strong>Made for Your Space</strong><p>Practical designs for everyday living.</p></div>
+    <div class="benefit"><span class="symbol">☆</span><strong>Modern Designs</strong><p>Timeless styles for every room.</p></div>
+    <div class="benefit"><span class="symbol">☏</span><strong>Friendly Support</strong><p>Talk to us about your furniture idea.</p></div>
+  </div>
+
+  <section class="content" id="products">
+    <div class="section-heading">
+      <div class="eyebrow">Find your style</div>
+      <h2>Our Furniture Categories</h2>
+      <p>Explore furniture designed to fit your lifestyle and space.</p>
+    </div>
+    <div class="categories">
+      <a class="category" href="#contact">
+        <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80" alt="Comfortable bedroom with a modern bed" loading="lazy">
+        <div class="category-info"><h3>Bedroom Furniture</h3><p>Beds, wardrobes and more</p></div>
+      </a>
+      <a class="category" href="#contact">
+        <img src="https://images.unsplash.com/photo-1604578762246-41134e37f9cc?auto=format&fit=crop&w=900&q=80" alt="Wooden dining table and chairs" loading="lazy">
+        <div class="category-info"><h3>Dining Tables</h3><p>Bring everyone together</p></div>
+      </a>
+      <a class="category" href="#contact">
+        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80" alt="Modern office desk and workspace" loading="lazy">
+        <div class="category-info"><h3>Office Furniture</h3><p>Work smarter, in style</p></div>
+      </a>
+      <a class="category" href="#contact">
+        <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=80" alt="Modern living room with sofa and coffee table" loading="lazy">
+        <div class="category-info"><h3>Living Room</h3><p>Sofas, tables and decor</p></div>
+      </a>
+    </div>
+  </section>
+
+  <section class="content about" id="about">
+    <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=85" alt="Warm, modern home interior" loading="lazy">
+    <div>
+      <div class="eyebrow">About HomeStyle</div>
+      <h2>Furniture that feels like home.</h2>
+      <p>At HomeStyle Furniture, we believe the right furniture brings comfort, function, and character to every room. Whether you are planning a new bedroom, dining area, or workspace, we can help you find the right fit.</p>
+      <a class="btn" href="#contact">Discuss Your Idea&nbsp; →</a>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="contact-inner">
+      <div>
+        <div class="eyebrow">Let's talk</div>
+        <h2>Have a furniture idea?</h2>
+        <p>Contact us to discuss your needs and request details.</p>
+        <p style="margin-top:14px"><a class="btn" href="https://wa.me/251927780379" target="_blank" rel="noopener">☏ Chat on WhatsApp</a></p>
+      </div>
+      <div class="contact-details">
+        <div><strong>Phone / WhatsApp</strong><a href="tel:+251927780379">+251 927 780 379</a></div>
+        <div><strong>Email</strong><a href="mailto:yourname@example.com">yourname@example.com</a></div>
+        <div><strong>Location</strong><span>Addis Ababa, Ethiopia</span></div>
+      </div>
+    </div>
+  </section>
+  <footer>© 2026 HomeStyle Furniture. All rights reserved.</footer>
+  <a class="whatsapp-float" href="https://wa.me/251927780379" target="_blank" rel="noopener" aria-label="Chat with HomeStyle Furniture on WhatsApp">WhatsApp ↗</a>
+</body>
+</html>
