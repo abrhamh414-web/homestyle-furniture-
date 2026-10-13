@@ -180,5 +180,162 @@ DOCTYPE html>
   </section>
   <footer>© 2026 HomeStyle Furniture. All rights reserved.</footer>
   <a class="whatsapp-float" href="https://wa.me/251927780379" target="_blank" rel="noopener" aria-label="Chat with HomeStyle Furniture on WhatsApp">WhatsApp ↗</a>
+  
+<section id="whatsapp-order" class="order-section">
+  <div class="order-card">
+    <p class="order-brand">HOMESTYLE FURNITURE</p>
+    <h2>Order Your Furniture</h2>
+    <p>Choose your furniture and send your order through WhatsApp.</p>
+
+    <form id="furnitureOrderForm">
+      <label for="product">Furniture Type</label>
+      <select id="product" required>
+        <option value="Bed">Bed</option>
+        <option value="Dining table">Dining Table</option>
+        <option value="Kitchen cabinet">Kitchen Cabinet</option>
+        <option value="Office table">Office Table</option>
+        <option value="Custom furniture">Custom Furniture</option>
+      </select>
+
+      <label for="size">Size</label>
+      <select id="size" required>
+        <option>120 × 200 cm</option>
+        <option selected>160 × 200 cm</option>
+        <option>180 × 200 cm</option>
+        <option>Custom size</option>
+      </select>
+
+      <label for="color">Color / Finish</label>
+      <select id="color" required>
+        <option selected>Natural wood</option>
+        <option>Dark brown</option>
+        <option>White</option>
+        <option>Custom color</option>
+      </select>
+
+      <label for="quantity">Quantity</label>
+      <input id="quantity" type="number" min="1" value="1" required>
+
+      <label for="details">Additional Details</label>
+      <textarea id="details" rows="3"
+        placeholder="Delivery location or special requests"></textarea>
+
+      <button type="submit" class="order-button">
+        Order on WhatsApp
+      </button>
+      <p class="order-note">
+        Review your order in WhatsApp and tap Send to submit it.
+      </p>
+    </form>
+  </div>
+</section>
+
+<style>
+.order-section {
+  background: #f7f2e9;
+  padding: 45px 16px;
+  color: #382719;
+  font-family: Arial, sans-serif;
+}
+.order-card {
+  max-width: 600px;
+  margin: auto;
+  padding: 28px;
+  background: #fffdf8;
+  border: 1px solid #e5d7c3;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px #38271915;
+}
+.order-brand {
+  color: #98713e;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+.order-card h2 {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+#furnitureOrderForm label {
+  display: block;
+  margin: 16px 0 7px;
+  font-weight: bold;
+}
+#furnitureOrderForm select,
+#furnitureOrderForm input,
+#furnitureOrderForm textarea {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d9cbb8;
+  border-radius: 8px;
+  background: white;
+  font-size: 15px;
+}
+.order-button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 22px;
+  border: none;
+  border-radius: 9px;
+  background: #217346;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.order-button:hover {
+  background: #195c37;
+}
+.order-note {
+  font-size: 12px;
+  color: #706458;
+  text-align: center;
+  line-height: 1.5;
+}
+@media (max-width: 480px) {
+  .order-card { padding: 20px 15px; }
+}
+</style>
+
+<script>
+document.getElementById("furnitureOrderForm")
+  .addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const product = document.getElementById("product").value;
+    const size = document.getElementById("size").value;
+    const color = document.getElementById("color").value;
+    const quantity = Number(
+      document.getElementById("quantity").value
+    );
+    const details = document.getElementById("details").value.trim();
+
+    if (!Number.isInteger(quantity) || quantity < 1) {
+      alert("Please enter a valid quantity.");
+      return;
+    }
+
+    const message = [
+      "Hello HomeStyle Furniture!",
+      "I would like to order furniture:",
+      "",
+      "Furniture: " + product,
+      "Size: " + size,
+      "Color: " + color,
+      "Quantity: " + quantity,
+      ...(details ? ["Details: " + details] : []),
+      "",
+      "Please confirm the price and delivery details. Thank you!"
+    ].join("\n");
+
+    const url =
+      "https://wa.me/251927780379?text=" +
+      encodeURIComponent(message);
+
+    window.location.href = url;
+  });
+</script>
+
 </body>
 </html>
